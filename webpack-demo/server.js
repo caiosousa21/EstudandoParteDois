@@ -10,6 +10,9 @@ app.use(webpackDevMiddleware(compiler,{
     publicPath: config.output.publicPath
 }))
 
+
 app.listen(3000, function(){
     console.log('App ligado na porta 3000!')
 })
+
+// "server":"node server.js", //linha 10 package.json
