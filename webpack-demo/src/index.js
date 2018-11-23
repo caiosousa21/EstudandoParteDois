@@ -4,6 +4,8 @@ function component(){
     var element = document.createElement('div');
     element.innerHTML = join(['olá','caio'], ' ');
 
+    this.alert('Hmmm, testando...');
+
     return element;
 }
 
