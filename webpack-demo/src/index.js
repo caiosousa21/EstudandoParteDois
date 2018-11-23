@@ -1,13 +1,12 @@
+import _ from 'lodash';
+import Print from './print';
 
-async function getComponent(){
+function component() {
     var element = document.createElement('div');
-    const {default: _ } = await import(/*webpackChunckName "lodash"*/'lodash');
-
-    element.innerHTML = _.join(['Hello','caio'],' ');
+    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+    element.onclick = Print.bind(null, 'Olá Caio');
 
     return element;
 }
 
-getComponent().then(component=>{
-    document.body.appendChild(component);
-})
+document.body.appendChild(component());
