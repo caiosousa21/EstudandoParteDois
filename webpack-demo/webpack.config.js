@@ -8,17 +8,17 @@ module.exports = {
         path: path.resolve(__dirname, 'dist')
     },
     devtool: 'inline-source-map',
-    module:{
-        rules:[
+    module: {
+        rules: [
             {
-                         test: require.resolve('index.js'),
-                         use: 'imports-loader?this=>window'
+                test: require.resolve('index.js'),
+                use: 'imports-loader?this=>window'
             }
         ]
     },
-    plugins:[
+    plugins: [
         new webpack.ProvidePlugin({
-            join:['lodash','join']
+            join: ['lodash', 'join']
         })
     ]
 };
