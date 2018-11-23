@@ -7,7 +7,7 @@ function component(){
     let element = document.createElement('div');
 
     //função join do lodash, recebe dois parâmetros, um array de strings, e uma string para inserir entre eles
-    element.innerHTML = _.join(['Hello', 'caio'], ' * ');
+    element.innerHTML = _.join(['Hello', 'caio','!'], ' * ');
     //adicionando classe ao element
     element.classList.add('hello');
 
