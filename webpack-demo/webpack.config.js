@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack')
 
 module.exports = {
     entry: './src/index.js',
@@ -6,39 +7,9 @@ module.exports = {
         filename: 'bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use:[
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            {
-                test: /\.(png|sbg|jpg|gif)$/,
-                use:[
-                    'file-loader'
-                ]
-            },
-            {
-                test: /\.(woff|woff|eot|ttf|otf)$/,
-                use:[
-                    'file-loader'
-                ]
-            },
-            {
-                test: /\.(csv|tsv)$/,
-                use:[
-                    'csv-loader'
-                ]
-            },
-            {
-                test: /\.xml$/,
-                use:[
-                    'xml-loader'
-                ]
-            }
-        ]
-    }
+    plugins:[
+        new webpack.ProvidePlugin({
+            join:['lodash','join']
+        })
+    ]
 };
