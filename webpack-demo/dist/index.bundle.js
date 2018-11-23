@@ -43,7 +43,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"vendors~lodash":"vendors~lodash"}[chunkId]||chunkId) + ".bundle.js"
+/******/ 		return __webpack_require__.p + "" + ({}[chunkId]||chunkId) + ".bundle.js"
 /******/ 	}
 /******/
 /******/ 	// The require function
@@ -206,7 +206,7 @@
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("function getComponent(){\r\n    return __webpack_require__.e(/*! import() | lodash */ \"vendors~lodash\").then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7)).then(({default: _ })=>{\r\n        var element = document.createElement('div');\r\n\r\n        element.innerHTML = _.join(['Hello','caio'], \" \");\r\n\r\n        return element;\r\n    }).catch(error => 'Um erro ocorreu enquanto carregavamos o componente :c');\r\n}\r\n\r\ngetComponent().then(component=>{\r\n    document.body.appendChild(component);\r\n})\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("\r\nasync function getComponent(){\r\n    var element = document.createElement('div');\r\n    const {default: _ } = await __webpack_require__.e(/*! import() */ 0).then(__webpack_require__.t.bind(null, /*! lodash */ \"./node_modules/lodash/lodash.js\", 7));\r\n\r\n    element.innerHTML = _.join(['Hello','caio'],' ');\r\n\r\n    return element;\r\n}\r\n\r\ngetComponent().then(component=>{\r\n    document.body.appendChild(component);\r\n})\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
