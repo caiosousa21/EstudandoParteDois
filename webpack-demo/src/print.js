@@ -1,3 +1,3 @@
 export default function printMe(){
-    console.log('Atualizanfsdfddo print.js!');
+    console.log('Atualizando print.js!');
 }

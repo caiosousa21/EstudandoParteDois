@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const webpack = require('webpack');
+const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
     mode:'development',
@@ -23,11 +24,13 @@ module.exports = {
     plugins:[
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
-            title: 'Gerenciador de Saidas'
+            title: 'Progressive Web Aplication'
         }),
-       // new webpack.optimize.OccurrenceOrderPlugin(),//para usar hmr junto com middleware
         new webpack.HotModuleReplacementPlugin(),
-        //new webpack.NoEmitOnErrorsPlugin()//mesma coisa
+        new WorkboxPlugin.GenerateSW({
+            clientsClaim: true,
+            skipWaiting: true
+        })
     ],
     output: {
         filename: '[name].bundle.js',
