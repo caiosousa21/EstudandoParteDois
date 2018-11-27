@@ -11,7 +11,7 @@ if('serviceWorker' in navigator){
         });
     });
 }
-
+console.log('caio')
 function component(){
     let element = document.createElement('div');
     var btn = document.createElement('button');
@@ -27,8 +27,11 @@ function component(){
     return element;
 }
 
-let element = component();
-document.body.appendChild(element);
+//passando função como parâmetro irá criar os elementos duas vezes, uma na chamada de appendChild e outra na chamada de element
+// let element = component();
+// document.body.appendChild(element);
+document.body.appendChild(component);
+
 
 if (module.hot) {
        module.hot.accept('./print.js', function() {

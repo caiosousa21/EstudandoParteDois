@@ -5,10 +5,8 @@ const webpack = require('webpack');
 const WorkboxPlugin = require('workbox-webpack-plugin');
 
 module.exports = {
-    mode:'development',
     entry: {
-        //mdw:'webpack-hot-middleware/client',
-        app:'./src/index.js',
+        app:'./src/index.js'
     },
     devtool:'inline-source-map',
     devServer:{
@@ -33,8 +31,7 @@ module.exports = {
         })
     ],
     output: {
-        filename: '[name].bundle.js',
-        path: path.resolve(__dirname, 'dist'),
-        publicPath:'/'
+        filename: 'bundle.js',
+        path: path.resolve(__dirname, 'dist')
     }
 };
